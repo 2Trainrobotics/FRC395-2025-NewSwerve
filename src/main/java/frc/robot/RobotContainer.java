@@ -130,8 +130,8 @@ public class RobotContainer
         driveDirectAngleKeyboard);
 
     // drivebase.setDefaultCommand(driveFieldOrientedDirectAngle);
-    // drivebase.setDefaultCommand(driveFieldOrientedAngularVelocity);
-    drivebase.setDefaultCommand(driveRobotOrientedAngularVelocity);
+    drivebase.setDefaultCommand(driveFieldOrientedAngularVelocity);
+    // drivebase.setDefaultCommand(driveRobotOrientedAngularVelocity);
     driverXbox.start().onTrue((Commands.runOnce(drivebase::zeroGyro)));
 
     driverXbox.pov(0)
