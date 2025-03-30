@@ -48,4 +48,30 @@ public final class Constants
     public static final double RIGHT_X_DEADBAND = 0.1;
     public static final double TURN_CONSTANT    = 6;
   }
+
+  public static final class ElevatorConstants {
+    // SPARK MAX CAN IDs
+    public static final int kLeftElevatorCanId = 13;
+    public static final int kRightElevatorCanId = 14;
+
+    // Speed
+    public static double kElevatorUpSpeed               = -0.3;
+    public static double kElevatorDownSpeed             =  0.1;
+    public static double kElevatorMaintainPositionSpeed = -0.05;
+  }
+
+  public static final class ClawConstants {
+    // SPARK MAX CAN IDs
+    public static final int kSwingClawCanId = 15;
+    public static final int kShootClawCanId = 16;
+
+    // Speed
+    public static double kSwingUpSpeed                  =  1.0;
+    public static double kSwingDownSpeed                = -0.3;
+    public static double kSwingStopSpeed                =  0.05;
+    public static double kShooterOutSpeed               =  0.5;
+    public static double kShooterInSpeed                = -0.3;
+    public static double kShooterStopSpeed              =  0;
+  }
+
 }
