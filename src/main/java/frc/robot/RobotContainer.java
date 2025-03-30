@@ -134,22 +134,20 @@ public class RobotContainer
     drivebase.setDefaultCommand(driveRobotOrientedAngularVelocity);
     driverXbox.start().onTrue((Commands.runOnce(drivebase::zeroGyro)));
 
-    // driverXbox.leftBumper()
     driverXbox.pov(0)
         .whileTrue(new RunCommand(
-            () -> elevator.moveElevator(Constants.ElevatorConstants.kElevatorUpSpeed), 
+            () -> elevator.moveElevatorUp(),
             elevator))
         .onFalse(new RunCommand(
-            () -> elevator.moveElevator(Constants.ElevatorConstants.kElevatorMaintainPositionSpeed), 
+            () -> elevator.maintainElevatorPosition(),
             elevator));
 
-    // driverXbox.rightBumper()
     driverXbox.pov(180)
         .whileTrue(new RunCommand(
-            () -> elevator.moveElevator(Constants.ElevatorConstants.kElevatorDownSpeed), 
+            () -> elevator.moveElevatorDown(),
             elevator))
         .onFalse(new RunCommand(
-            () -> elevator.moveElevator(Constants.ElevatorConstants.kElevatorMaintainPositionSpeed), 
+            () -> elevator.maintainElevatorPosition(),
             elevator));
 
     driverXbox.x()
@@ -182,22 +180,6 @@ public class RobotContainer
             () -> claw.moveShooter(Constants.ClawConstants.kShooterStopSpeed), 
             elevator));
 
-
-// new JoystickButton(driverXbox, Button.kL1.value)
-//         .whileTrue(new RunCommand(
-//             () -> elevator.moveElevator(Constants.ElevatorConstants.kElevatorUpSpeed), 
-//             elevator))
-//         .onFalse(new RunCommand(
-//             () -> elevator.moveElevator(Constants.ElevatorConstants.kElevatorMaintainPositionSpeed), 
-//             elevator));
-
-//     new JoystickButton(driverXbox, Button.kL2.value)
-//         .whileTrue(new RunCommand(
-//             () -> elevator.moveElevator(Constants.ElevatorConstants.kElevatorDownSpeed), 
-//             elevator))
-//         .onFalse(new RunCommand(
-//             () -> elevator.moveElevator(Constants.ElevatorConstants.kElevatorMaintainPositionSpeed), 
-//             elevator));
 
     ////////////////////////////////////////////////////////////////////////////
     /// Code below comes from the YAGSL Example

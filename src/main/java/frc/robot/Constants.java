@@ -51,13 +51,17 @@ public final class Constants
 
   public static final class ElevatorConstants {
     // SPARK MAX CAN IDs
-    public static final int kLeftElevatorCanId = 13;
+    public static final int kLeftElevatorCanId  = 13;
     public static final int kRightElevatorCanId = 14;
 
     // Speed
     public static double kElevatorUpSpeed               = -0.3;
     public static double kElevatorDownSpeed             =  0.1;
     public static double kElevatorMaintainPositionSpeed = -0.05;
+
+    // Position
+    public static double kElevatorMaxHighPosition = -45;
+    public static double kElevatorMinLowPosition  = 0;
   }
 
   public static final class ClawConstants {
