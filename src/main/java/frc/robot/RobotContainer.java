@@ -120,16 +120,18 @@ public class RobotContainer
   private void configureBindings()
   {
     Command driveFieldOrientedDirectAngle      = drivebase.driveFieldOriented(driveDirectAngle);
-    Command driveFieldOrientedAnglularVelocity = drivebase.driveFieldOriented(driveAngularVelocity);
+    Command driveFieldOrientedAngularVelocity  = drivebase.driveFieldOriented(driveAngularVelocity);
     Command driveRobotOrientedAngularVelocity  = drivebase.driveFieldOriented(driveRobotOriented);
     Command driveSetpointGen = drivebase.driveWithSetpointGeneratorFieldRelative(
         driveDirectAngle);
     Command driveFieldOrientedDirectAngleKeyboard      = drivebase.driveFieldOriented(driveDirectAngleKeyboard);
-    Command driveFieldOrientedAnglularVelocityKeyboard = drivebase.driveFieldOriented(driveAngularVelocityKeyboard);
+    Command driveFieldOrientedAngularVelocityKeyboard = drivebase.driveFieldOriented(driveAngularVelocityKeyboard);
     Command driveSetpointGenKeyboard = drivebase.driveWithSetpointGeneratorFieldRelative(
         driveDirectAngleKeyboard);
 
-    drivebase.setDefaultCommand(driveFieldOrientedAnglularVelocity);
+    // drivebase.setDefaultCommand(driveFieldOrientedDirectAngle);
+    // drivebase.setDefaultCommand(driveFieldOrientedAngularVelocity);
+    drivebase.setDefaultCommand(driveRobotOrientedAngularVelocity);
     driverXbox.start().onTrue((Commands.runOnce(drivebase::zeroGyro)));
 
     // driverXbox.leftBumper()
@@ -206,7 +208,7 @@ public class RobotContainer
 //       drivebase.setDefaultCommand(driveFieldOrientedDirectAngleKeyboard);
 //     } else
 //     {
-//       drivebase.setDefaultCommand(driveFieldOrientedAnglularVelocity);
+//       drivebase.setDefaultCommand(driveFieldOrientedAngularVelocity);
 //     }
 
 //     if (Robot.isSimulation())
@@ -238,7 +240,7 @@ public class RobotContainer
 //     }
 //     if (DriverStation.isTest())
 //     {
-//       drivebase.setDefaultCommand(driveFieldOrientedAnglularVelocity); // Overrides drive command above!
+//       drivebase.setDefaultCommand(driveFieldOrientedAngularVelocity); // Overrides drive command above!
 
 //       driverXbox.x().whileTrue(Commands.runOnce(drivebase::lock, drivebase).repeatedly());
 //       driverXbox.y().whileTrue(drivebase.driveToDistanceCommand(1.0, 0.2));
